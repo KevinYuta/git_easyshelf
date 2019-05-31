@@ -24,4 +24,8 @@ class ReviewController < ApplicationController
           redirect_to new_review_path
         end
     end
+    
+    def review_params #ストロングパラメータで制限する。
+        params.require(:review).permit(:name, :author, :review, :image_url, :introduction)
+    end
 end
