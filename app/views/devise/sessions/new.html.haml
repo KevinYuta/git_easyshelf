@@ -1,0 +1,23 @@
+.login_back
+  .log-in
+    = render partial: 'review/login_logo'
+    .log-in-inner
+      %h2 ログイン
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        / <haml_silent> if alert </haml_silent><haml_block>
+        / <p class='alert alert-danger'><haml_loud> alert </haml_loud></p>
+        / </haml_block>
+        %div
+          = f.email_field :email, autofocus: true, placeholder: 'メールアドレス', class: 'input form-control'
+        %div
+          = f.password_field :password, autocomplete: 'off', placeholder: 'パスワード', class: 'input form-control'
+        %br/
+        - if devise_mapping.rememberable?
+          .checkbox
+            %label
+              %input#user_remember_me{:name => "user[remember_me]", :type => "checkbox", :value => "1"}/
+              = f.label :remember_me, 'ログイン情報を記憶する', class: 'memory-check'
+        %div
+          = f.submit class: 'btn btn-primary withripple', value: 'ログイン'
+      .login_link
+        = render 'devise/shared/links'
