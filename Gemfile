@@ -77,7 +77,5 @@ gem 'ransack'
 # 検索機能
 gem 'bullet'
 # N+1問題検知
-gem 'haml-rails' #erbではなくhamlで記述するために導入します。
-gem 'erb2haml' #既存のerbファイルをhamlに変換します。
 gem 'bootstrap' #versionをしていないのでbootstrap4がインストールされます。
 gem 'bootstrap_form' #formを自動でbootstrapレイアウトにしてくれます。

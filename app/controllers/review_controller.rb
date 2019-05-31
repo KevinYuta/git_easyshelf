@@ -1,11 +1,11 @@
 class ReviewController < ApplicationController
-    before_action :authenticate_user!, exept[:index]
+    # before_action :authenticate_user!, exept[:index]
     
     def index
     end
     
     def show
-        @review = REview.find(params[:id])
+        @review = Review.find(params[:id])
     end
     
     def new
