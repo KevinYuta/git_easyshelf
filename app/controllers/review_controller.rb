@@ -1,5 +1,5 @@
 class ReviewController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user!, exept[:index]
     
     def index
     end
