@@ -1,0 +1,18 @@
+%section.book-images-frame.col-md-3.col-xs-12
+  - if @review.image_url?
+    = image_tag "#{@review.image_url}",class: "book-images-cover",style:"height:200px;width:150px;"
+  - else
+    = image_tag "no_image.jpg",class: "book-images-cover",style:"height:200px;width:150px;"
+%section.book-content.col-md-6.col-xs-12
+  .book-title-frame
+    .book-title-block
+      = @review.name
+  .book-attribute-frame
+    %h2 著者
+    .book-author
+      = @review.author
+  .book-content
+    %h2 紹介
+    = simple_format (@review.introduction)
+    %h2 レビュー
+    = simple_format (@review.review)
