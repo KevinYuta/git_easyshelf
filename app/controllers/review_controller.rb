@@ -15,4 +15,13 @@ class ReviewController < ApplicationController
             format.json#jsonで出力
         end
     end
+    
+    def create
+        @review = Review.new(review_params)
+        if @review.save
+          redirect_to review_path(@review)
+        else
+          redirect_to new_review_path
+        end
+    end
 end
